@@ -3,8 +3,8 @@ require 'rails_helper'
 describe 'visitor sees trips show page' do
   it 'sees show page for individual trip' do
     trip1 = Trip.create(name: 'hike1', start_date: "8/20/18", end_date: "8/20/18")
-    trail1 = trip1.create(length: 4, name: 'trail1', address: 'mountains')
-    trail2 = trip1.create(length: 6, name: 'trail2', address: 'river')
+    trail1 = trip1.trails.create(length: 4, name: 'trail1', address: 'mountains')
+    trail2 = trip1.trails.create(length: 6, name: 'trail2', address: 'river')
 
     visit trips_path
 
