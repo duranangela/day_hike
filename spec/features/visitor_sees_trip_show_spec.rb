@@ -7,6 +7,7 @@ describe 'visitor sees trips show page' do
     trail2 = trip1.trails.create(length: 6, name: 'trail2', address: 'river')
     total_length = 10
     avg_distance = 5
+    max_distance = 6
 
     visit trips_path
 
@@ -22,5 +23,6 @@ describe 'visitor sees trips show page' do
 
     expect(page).to have_content(total_length)
     expect(page).to have_content(avg_distance)
+    expect(page).to have_content(max_distance)
   end
 end

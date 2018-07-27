@@ -11,4 +11,8 @@ class Trip < ApplicationRecord
     trails.average(:length)
   end
 
+  def max_distance
+    trails.maximum(:length)
+  end
+
 end
