@@ -29,5 +29,14 @@ describe Trail, type: :model do
 
       expect(trip1.max_distance).to eq(result)
     end
+    it 'should show shortest distance' do
+      trip1 = Trip.create(name: 'hike1', start_date: "8/20/18", end_date: "8/20/18")
+      trail1 = trip1.trails.create(length: 4, name: 'trail1', address: 'mountains')
+      trail2 = trip1.trails.create(length: 6, name: 'trail2', address: 'river')
+
+      result = 4
+
+      expect(trip1.min_distance).to eq(result)
+    end
   end
 end

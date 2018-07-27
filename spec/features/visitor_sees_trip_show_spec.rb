@@ -8,6 +8,7 @@ describe 'visitor sees trips show page' do
     total_length = 10
     avg_distance = 5
     max_distance = 6
+    min_distance = 4
 
     visit trips_path
 
@@ -24,5 +25,6 @@ describe 'visitor sees trips show page' do
     expect(page).to have_content(total_length)
     expect(page).to have_content(avg_distance)
     expect(page).to have_content(max_distance)
+    expect(page).to have_content(min_distance)
   end
 end
